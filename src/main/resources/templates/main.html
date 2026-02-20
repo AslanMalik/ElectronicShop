@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <div th:insert="links.html"> </div>
+</head>
+<body>
+    <div class = "container">
+
+
+        <h1 style="text-align: center"> Electronic shop items </h1>
+
+        <div class = "row g-3 mt-3">
+            <div class = "col-md-4" th:each="laptop : ${laptops}">
+                <div class="card center" style="background-color: #d1e7dd ">
+                    <div class="card-body">
+                        <h5 class="card-title text-center text-primary fw-bold fs-3" th:text="${laptop.name}"></h5>
+                        <p class="card-text text-center" th:text="${laptop.description}"></p>
+                        <p class = "card-text text-center fw-bold fs-4"  style="color: #178855" th:text="${laptop.price + ' $'}"></p>
+                        <div class = "text-center"><button class ="btn btn-success text-center w-100" style="align-items: center;">DETAILS</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</body>
+</html>
